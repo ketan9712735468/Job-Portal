@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Job - Portal</title>
+    <link rel="stylesheet" href="{% static '/css/base.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="input_main">
+        <label>Username</label>
+        {{register_form.username}}
+      </div>
+      <div class="input_main">
+        <label>Email</label>
+        {{register_form.email}}
+      </div>
+      <div class="input_main">
+        <label>Password</label>
+        {{register_form.password1}}
+      </div>
+      <div class="input_main">
+        <label>Confirm Password</label>
+        {{register_form.password2}}
+      </div>
+      <div class="radio">
+        <label for="user">User</label>
+        <input type="radio" id="user" name="user_type" value="user" class="inpt">
+        <label for="admin">Admin</label>
+        <input type="radio" id="admin" name="user_type" value="admin" class="inpt">
+      </div>
+      <button class="button" type="submit">Submit</button>
+      </form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="{% url 'login'%}">Login here</a>
+    </p>
+  </body>
+</html>

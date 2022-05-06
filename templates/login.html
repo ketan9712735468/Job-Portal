@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Job - Porta</title>
+    <link rel="stylesheet" href="{% static '/css/base.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form method="post">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="" />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="" />
+        <button class="button" type="submit">Submit</button>
+      </form>
+    </div>
+    <p class="para-2">
+      Not have an account? <a href="{% url 'register' %}">Sign Up Here</a>
+    </p>
+  </body>
+</html>
+
